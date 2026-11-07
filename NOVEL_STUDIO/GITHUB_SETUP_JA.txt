@@ -1,0 +1,20 @@
+NOVEL STUDIO GitHub Actions 公開手順（v0.5.0）
+
+公開リポジトリ: https://github.com/hamarisu132-code/novel-studio-public-updates
+
+1. このZIPの NOVEL_STUDIO フォルダ内のファイルを公開リポジトリのルートへ登録する。
+   .github/workflows/windows-release.yml を含めること。
+   README.md は既存のものを残してよい。
+   dist/ build/ data/ *.db を絶対に登録しない。
+2. Settings > Actions > General > Workflow permissions で
+   Read and write permissions を選んで Save。
+3. GitHubで Releases > Draft a new release > Choose a tag >
+   Create new tag v0.5.0 on main > Publish release を実行。
+   タグ作成をきっかけに Actions が走り、既存のReleaseへZIPを追加する。
+4. Actions > Windows Release の成功を待つ。
+5. Releases に NOVEL_STUDIO_Windows.zip が添付されているか確認。
+6. 現在の v0.5.0 updater で更新を実証するには、次に v0.6.0 の
+   version.json を用意し、v0.6.0 タグをプッシュする必要がある。
+
+注意: GitHub Actions上でのWindowsビルド、GitHub配布、更新ランチャーによる
+実際の置換はまだ検証していない。既存のLAUNCHERは削除しないこと。
